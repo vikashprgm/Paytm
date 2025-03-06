@@ -1,3 +1,6 @@
-## Build a basic version of PayTM
-# Paytm
-# Paytm
+## Author - v1kash
+## Purpose is to build a basic version of PayTM
+# Stack-
+React
+MongoDB
+Express
