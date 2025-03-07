@@ -1,12 +1,16 @@
 import Input from '../../components/Input';
+import Button from "../../components/Button";
+import Heading from '../../components/Heading';
 
 export function Signup(){
     return(
-        <div className='justify-self-center w-md rounded-4xl bg-gray-100 p-5'>
+        <div>
+            <Heading big={"Sign Up"} small={"Enter your information to create an account"}></Heading>
             <Input label="First Name" fill="Peter"></Input>
             <Input label="Last Name" fill="Parker"></Input>
             <Input label="Email" fill="pizzatime@gmail.com"></Input>
-            <Input label="Password" fill="12345678"></Input>
+            <Input label="Password"></Input>
+            <Button text={"Signup"}></Button>
         </div>
     )
 }

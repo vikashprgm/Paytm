@@ -1,8 +1,8 @@
-export default function Input({fill,label}){
+export default function Input({label,fill}){
     return (
-        <div class="justify-self-center">
-            <div class="p-1">{label}</div>
-            <input class="border-2 rounded-md p-1 mb-3" placeholder={fill}/>
+        <div class="w-full m-3 justify-items-center">
+            <div class="flex p-1">{label}</div>
+            <input class="flex border-2 rounded-md p-1" placeholder={fill}/>
         </div>
     )
 }
