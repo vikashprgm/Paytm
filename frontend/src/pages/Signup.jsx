@@ -1,6 +1,6 @@
-import Input from '../../components/Input';
-import Button from "../../components/Button";
-import Heading from '../../components/Heading';
+import Input from '../components/Input';
+import Button from "../components/Button";
+import Heading from '../components/Heading';
 
 export function Signup(){
     return(
