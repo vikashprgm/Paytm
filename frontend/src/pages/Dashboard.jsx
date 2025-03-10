@@ -1,7 +1,13 @@
+import Balance from "../components/Balance";
+import Userview from "../components/Userview";
+import Appbar from "../components/Appbar";
+
 export function Dashboard(){
     return (
         <div>
-            hello
+            <Appbar/>
+            <Balance/>
+            <Userview/>
         </div>
     )
 }
