@@ -4,13 +4,14 @@ import Heading from '../components/Heading';
 import { useState } from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
+import Bottomwarning from '../components/Bottomwarning';
 
 export function Signup(){
     const navigate=useNavigate();
-    const [Username,setUsername] = useState("");
-    const [Firstname,setFirstname]= useState("");
-    const [Lastname,setLastname]= useState("");
-    const [Password,setPassword]= useState("");
+    const [username,setUsername] = useState("");
+    const [firstname,setFirstname]= useState("");
+    const [lastname,setLastname]= useState("");
+    const [password,setPassword]= useState("");
 
     return(
         <div>
@@ -22,14 +23,15 @@ export function Signup(){
             <Input onChange={ (e)=>{setPassword(e.target.value)} } label="Password"></Input>
             <Button onClick={ async ()=>{
                 const response = await axios.post("http://localhost:3000/api/v1/user/signup", {
-                Username,
-                Firstname,
-                Lastname,
-                Password} );
+                username,
+                firstname,
+                lastname,
+                password });
                   
                 localStorage.setItem("token", response.data.token)
                 navigate("/dashboard")}
                 } text={"Signup"}></Button>
+            <Bottomwarning label={"Already have an account"} buttontext={"Sign in"} to={"/signin"}></Bottomwarning>
         </div>
     )
 }

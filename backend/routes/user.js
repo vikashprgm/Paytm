@@ -9,8 +9,8 @@ const  { authMiddleware } = require("../middleware");
 
 const signupBody = zod.object({
     username: zod.string().email(),
-	firstName: zod.string(),
-	lastName: zod.string(),
+	firstname: zod.string(),
+	lastname: zod.string(),
 	password: zod.string()
 })
 
@@ -21,8 +21,8 @@ const signinBody = zod.object({
 
 const updateBody = zod.object({
 	password: zod.string().optional(),
-    firstName: zod.string().optional(),
-    lastName: zod.string().optional(),
+    firstname: zod.string().optional(),
+    lastname: zod.string().optional(),
 })
 
 //signup
@@ -47,8 +47,8 @@ router.post("/signup", async (req, res) => {
     const user = await User.create({
         username: req.body.username,
         password: req.body.password,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
     })
     
     //initiate balance and user
@@ -121,11 +121,11 @@ router.get("/bulk", async (req, res) => {
 
     const users = await User.find({
         $or: [{
-            firstName: {
+            firstname: {
                 "$regex": filter
             }
         }, {
-            lastName: {
+            lastname: {
                 "$regex": filter
             }
         }]
@@ -134,8 +134,8 @@ router.get("/bulk", async (req, res) => {
     res.json({
         user: users.map(user => ({
             username: user.username,
-            firstName: user.firstName,
-            lastName: user.lastName,
+            firstname: user.firstname,
+            lastname: user.lastname,
             _id: user._id
         }))
     })

@@ -1,8 +1,8 @@
-export default function Balance({balance}){
+export default function Balance({amount}){
     return (
-        <div class="m-5 flex font-medium">
-            <div class="font-medium text-xl">Your Balance is</div>
-            <div class="ml-2 font-bold text-xl">${balance}</div>
+        <div className="m-5 flex font-medium">
+            <div className="font-medium text-xl">Your Balance is</div>
+            <div className="ml-2 font-bold text-xl">${amount}</div>
         </div>
     )
 }
